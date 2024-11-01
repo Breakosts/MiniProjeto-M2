@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hospital Ninja - Konohagakure</title>
+</head>
+<body>
+    <main>
+        <h1>Hospital de Konohagakure</h1>
+        <section id="formulario">
+            <article id="info_Paciente">
+                <h2>Informações do Paciente</h2>
+                <label>Nome:</label>
+                <input id="name" type="text" placeholder="Informe o nome do paciente ">
+                <label>Idade:</label>
+                <input id="idade" type="number" placeholder="Informe a idade do paciente">
+                <label>Gênero:</label>
+                <select id="gender">
+                    <option selected disabled value="">Selecione</option>
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                    <option>Prefiriu não informar</option>
+                </select>
+                <label>Data:</label>
+                <input id="data" type="date" placeholder="Informe a data da consulta">
+            </article>
+
+            <button id="submit">Enviar Dados</button>
+        </section>
+    </main>    
+    
+    <script src="script.js"></script>
+</body>
+</html>
