@@ -7,20 +7,39 @@ function getElements() {
     let genero = document.querySelector('select[name=gender]').value;
     let data = document.querySelector('#data').value;
 
+     if (!name || !idade || !genero || !data) {
+        alert('Por favor, preencha todos os campos antes de enviar.');
+        return; 
+    }
+
+    let dataFormatada = new Date(data).toLocaleDateString('pt-BR', { month: '2-digit', day: '2-digit' });
+
     let paciente = {
         nome: name,
         idade: idade,
         genero: genero,
-        data: data,
+        data: dataFormatada,
     }
     pacientes.push(paciente);
     renderElements();
 }
 
+window.addEventListener('load', renderElements);
+
 // Função para renderizar os elementos na tela
 function renderElements() {
     let aside = document.querySelector('aside');
     aside.innerHTML = '';
+
+    if (pacientes.length > 0) {
+        aside.style.backgroundColor = '#75fca9';  
+        aside.style.borderColor = '#000000';
+        aside.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+    } else {
+        aside.style.backgroundColor = 'transparent';  
+        aside.style.borderColor = 'transparent';
+        aside.style.boxShadow = 'none';
+    }
 
     // Itera sobre o array de pacientes
     pacientes.forEach((paciente, index) => {
