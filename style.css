@@ -45,6 +45,8 @@ body {
     background-color: #75fca9;
     font-weight: bold;
     box-shadow: 4px 4px 15px rgba(3, 0, 0, 1);  
+    overflow: hidden;
+    max-width: 400px;
 }
 
 main {
@@ -53,6 +55,7 @@ main {
     align-items: flex-start;
     gap: 20px; 
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 #info_Paciente {
@@ -70,11 +73,18 @@ main {
     margin: 3px;
 }
 
+#salvarButton {
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 #info_Paciente label, 
 #info_Paciente input, 
 #info_Paciente select {
     margin-bottom: 10px;
     width: 100%; 
+    box-sizing: border-box;
 }
 
 aside {
@@ -87,6 +97,8 @@ aside {
     box-shadow: 4px 4px 12px rgba(3, 0, 0, 1);  
     background-color: transparent;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    height: 100%;
 }
 
 #name,
@@ -112,4 +124,64 @@ aside {
 #salvarButton:hover,
 .buttonsList:hover {
     background-color: rgb(168, 168, 168); 
+}
+
+@media (max-width: 768px) {
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titulo {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    #formulario {
+        width: 90%; 
+        padding: 15px;
+        max-width: none;
+    }
+
+    aside {
+        width: 90%; 
+        padding: 20px;
+    }
+
+    #submit, 
+    #salvarButton,
+    .buttonsList {
+        width: 100%; 
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0 30px; 
+        box-sizing: border-box; 
+    }
+    
+    .titulo {
+        font-size: 1.2rem; 
+        padding: 10px;
+    }
+
+    #formulario {
+        width: 100%; 
+        padding: 10px;
+    }
+
+    aside {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #submit, 
+    #salvarButton,
+    .buttonsList {
+        width: 100%; 
+        padding: 12px;
+    }
 }
