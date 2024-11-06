@@ -17,18 +17,21 @@
                 <label>Idade:</label>
                 <input id="idade" type="number" placeholder="Informe a idade do paciente">
                 <label>Gênero:</label>
-                <select id="gender">
+                <select id="gender" name="gender">
                     <option selected disabled value="">Selecione</option>
-                    <option>Masculino</option>
-                    <option>Feminino</option>
-                    <option>Prefiriu não informar</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Prefiriu não informar">Prefiriu não informar</option>
                 </select>
                 <label>Data:</label>
-                <input id="data" type="date" placeholder="Informe a data da consulta">
+                <input id="data" type="date">
             </article>
 
-            <button id="submit">Enviar Dados</button>
+            <button id="submit" onclick="getElements()">Enviar Dados</button>
+            <button id="salvarButton" style="display:none;" onclick="updatePatient()">Salvar Alterações</button> 
         </section>
+
+        <aside></aside>
     </main>    
     
     <script src="script.js"></script>
